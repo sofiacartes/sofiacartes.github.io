@@ -1,0 +1,116 @@
+:root {
+  --bg: white;
+  --text: black;
+  --primary: #6c4bcf;
+}
+
+body.dark {
+  --bg: black;
+  --text: white;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+
+  /* scroll tipo referencia */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 25px;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #888;
+  font-weight: 400;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--primary);
+}
+
+/* SECCIÓN */
+.projects {
+  width: 100%;
+}
+
+/* PROYECTO FULLSCREEN */
+.project {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: block;
+
+  /* snap */
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+/* IMAGEN */
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1.05);
+  transition: transform 1.2s ease;
+}
+
+/* leve movimiento al entrar */
+.project.active img {
+  transform: scale(1);
+}
+
+/* TEXTO */
+.content {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+/* aparece al entrar */
+.project.active .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TITULO */
+.content h2 {
+  margin: 0;
+  font-size: 2.8rem;
+  color: #6c4bcf;
+}
+
+/* TEXTO */
+.content p {
+  margin-top: 10px;
+  font-weight: 300;
+  color: white;
+}
+
+/* TRANSICIÓN ENTRE PÁGINAS */
+#page-transition {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  transform: translateY(100%);
+  z-index: 9999;
+}

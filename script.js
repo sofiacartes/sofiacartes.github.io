@@ -22,7 +22,7 @@ document.querySelectorAll("a").forEach(link => {
   }
 });
 
-/* 🔥 animación al hacer scroll */
+/* animación al hacer scroll */
 const projects = document.querySelectorAll(".project");
 
 const observer = new IntersectionObserver(entries => {

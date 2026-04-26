@@ -5,7 +5,6 @@
   --primary: #6c4bcf;
 }
 
-/* oscuro */
 body.dark {
   --bg: black;
   --text: white;
@@ -20,7 +19,7 @@ body {
   color: var(--text);
 }
 
-/* NAV minimal */
+/* NAV */
 nav {
   position: fixed;
   width: 100%;
@@ -33,7 +32,6 @@ nav {
 
 nav a {
   text-decoration: none;
-  font-weight: 400;
   color: var(--soft);
   letter-spacing: 1px;
 }
@@ -43,14 +41,14 @@ nav a:hover {
   color: var(--primary);
 }
 
-/* GRID tipo referente */
+/* GRID */
 .projects {
   margin-top: 120px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* CARD */
+/* PROYECTO */
 .project {
   position: relative;
   display: block;
@@ -62,55 +60,46 @@ nav a:hover {
   width: 100%;
   height: 85vh;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  transition: transform 0.8s ease;
 }
 
-/* HOVER imagen */
+/* HOVER SUTIL (clave) */
 .project:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* OVERLAY clave */
-.overlay {
+/* TEXTO estilo editorial */
+.text {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px;
-
-  /* MUY IMPORTANTE: overlay sutil con tu color */
-  background: linear-gradient(
-    to top,
-    rgba(108, 75, 207, 0.9),
-    rgba(108, 75, 207, 0.0)
-  );
+  bottom: 40px;
+  left: 30px;
 
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(15px);
   transition: 0.4s ease;
 }
 
-/* aparece en hover */
-.project:hover .overlay {
+/* aparece sin caja */
+.project:hover .text {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* TEXTO */
-.overlay h3 {
+/* TITULO con TU color */
+.text h3 {
   margin: 0;
   font-weight: 600;
-  color: white;
+  color: #6c4bcf;
 }
 
-.overlay p {
+/* DESCRIPCIÓN blanca limpia */
+.text p {
   margin-top: 5px;
-  font-weight: 300;
   color: white;
-  opacity: 0.9;
+  font-weight: 300;
 }
 
-/* TRANSICIÓN ENTRE PÁGINAS */
+/* transición páginas */
 #page-transition {
   position: fixed;
   width: 100%;
@@ -120,7 +109,7 @@ nav a:hover {
   z-index: 9999;
 }
 
-/* RESPONSIVE */
+/* responsive */
 @media (max-width: 900px) {
   .projects {
     grid-template-columns: 1fr;

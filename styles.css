@@ -1,69 +1,124 @@
 :root {
   --bg: white;
   --text: black;
-  --text-soft: #555;
-  --title: #6c4bcf;
+  --text-soft: #666;
+  --primary: #6c4bcf;
 }
 
-/* modo oscuro automático */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: black;
-    --text: white;
-    --text-soft: #aaa;
-    --title: #b1b33e; /* corregido */
-  }
-}
-
-/* modo oscuro manual */
+/* modo oscuro */
 body.dark {
   --bg: black;
   --text: white;
   --text-soft: #aaa;
-  --title: #b1b33e;
+  --primary: #6c4bcf;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-soft);
   transition: 0.3s;
 }
 
+nav a.active,
+nav a:hover {
+  color: var(--primary);
+}
+
+/* HEADER */
 header {
-  text-align: center;
-  padding: 100px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1, h2, h3 {
-  color: var(--title);
+  color: var(--primary);
 }
 
 p {
   color: var(--text-soft);
 }
 
-.card {
-  border: 1px solid var(--text-soft);
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+/* GRID */
+.projects {
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+/* PROYECTO */
+.project {
+  position: relative;
+  overflow: hidden;
 }
 
-/* botón modo oscuro */
-#toggle {
+.project img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project:hover img {
+  transform: scale(1.03);
+}
+
+.info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.info h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.info p {
+  margin: 5px 0 0;
+  color: white;
+  opacity: 0.8;
+}
+
+/* TRANSICIÓN ENTRE PÁGINAS */
+#page-transition {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: 1px solid var(--text-soft);
-  color: var(--text);
-  padding: 10px;
-  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  transform: translateY(100%);
+  z-index: 9999;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project img {
+    height: 60vh;
+  }
 }

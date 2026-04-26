@@ -1,12 +1,10 @@
 const transition = document.getElementById("page-transition");
 
-// entrada
 window.addEventListener("load", () => {
   transition.style.transition = "transform 0.6s ease";
   transition.style.transform = "translateY(100%)";
 });
 
-// salida
 document.querySelectorAll("a").forEach(link => {
   if (link.hostname === window.location.hostname) {
     link.addEventListener("click", function (e) {

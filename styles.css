@@ -1,15 +1,15 @@
 :root {
   --bg: white;
   --text: black;
-  --text-soft: #666;
+  --soft: #777;
   --primary: #6c4bcf;
 }
 
-/* modo oscuro */
+/* oscuro */
 body.dark {
   --bg: black;
   --text: white;
-  --text-soft: #aaa;
+  --soft: #aaa;
   --primary: #6c4bcf;
 }
 
@@ -18,23 +18,24 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* NAV */
+/* NAV minimal */
 nav {
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   padding: 25px;
+  z-index: 10;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--text-soft);
-  transition: 0.3s;
+  font-weight: 400;
+  color: var(--soft);
+  letter-spacing: 1px;
 }
 
 nav a.active,
@@ -42,69 +43,76 @@ nav a:hover {
   color: var(--primary);
 }
 
-/* HEADER */
-header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-h1, h2, h3 {
-  color: var(--primary);
-}
-
-p {
-  color: var(--text-soft);
-}
-
-/* GRID */
+/* GRID tipo referente */
 .projects {
   margin-top: 120px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* PROYECTO */
+/* CARD */
 .project {
   position: relative;
+  display: block;
   overflow: hidden;
 }
 
+/* IMAGEN */
 .project img {
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
 }
 
+/* HOVER imagen */
 .project:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-.info {
+/* OVERLAY clave */
+.overlay {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+
+  /* MUY IMPORTANTE: overlay sutil con tu color */
+  background: linear-gradient(
+    to top,
+    rgba(108, 75, 207, 0.9),
+    rgba(108, 75, 207, 0.0)
+  );
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
 }
 
-.info h3 {
+/* aparece en hover */
+.project:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXTO */
+.overlay h3 {
   margin: 0;
   font-weight: 600;
+  color: white;
 }
 
-.info p {
-  margin: 5px 0 0;
+.overlay p {
+  margin-top: 5px;
+  font-weight: 300;
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* TRANSICIÓN ENTRE PÁGINAS */
 #page-transition {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: var(--bg);

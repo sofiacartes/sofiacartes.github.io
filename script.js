@@ -1,12 +1,12 @@
 const transition = document.getElementById("page-transition");
 
-// transición entrada
+// entrada
 window.addEventListener("load", () => {
   transition.style.transition = "transform 0.6s ease";
   transition.style.transform = "translateY(100%)";
 });
 
-// transición salida
+// salida
 document.querySelectorAll("a").forEach(link => {
   if (link.hostname === window.location.hostname) {
     link.addEventListener("click", function (e) {
@@ -22,7 +22,7 @@ document.querySelectorAll("a").forEach(link => {
   }
 });
 
-/* animación al hacer scroll */
+// animación scroll
 const projects = document.querySelectorAll(".project");
 
 const observer = new IntersectionObserver(entries => {

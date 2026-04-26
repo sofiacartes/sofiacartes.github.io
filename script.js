@@ -1,4 +1,3 @@
-const links = document.querySelectorAll("a");
 const transition = document.getElementById("page-transition");
 
 // entrada
@@ -8,7 +7,7 @@ window.addEventListener("load", () => {
 });
 
 // salida
-links.forEach(link => {
+document.querySelectorAll("a").forEach(link => {
   if (link.hostname === window.location.hostname) {
     link.addEventListener("click", function (e) {
       e.preventDefault();
@@ -20,12 +19,5 @@ links.forEach(link => {
         window.location.href = url;
       }, 500);
     });
-  }
-});
-
-// modo oscuro con tecla D
-document.addEventListener("keydown", (e) => {
-  if (e.key === "d") {
-    document.body.classList.toggle("dark");
   }
 });

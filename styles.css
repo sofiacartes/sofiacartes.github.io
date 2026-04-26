@@ -1,14 +1,6 @@
-:root {
-  --bg: white;
-  --text: black;
-  --primary: #6c4bcf;
-}
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: var(--bg);
-  color: var(--text);
 
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -32,23 +24,10 @@ nav a {
 
 nav a.active,
 nav a:hover {
-  color: var(--primary);
+  color: #6c4bcf;
 }
 
-/* HEADER */
-header {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h1 {
-  color: var(--primary);
-}
-
-/* PROYECTOS */
+/* PROYECTO FULLSCREEN */
 .project {
   height: 100vh;
   position: relative;
@@ -65,8 +44,8 @@ h1 {
 /* TEXTO */
 .content {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 60px;
+  left: 60px;
 
   opacity: 0;
   transform: translateY(30px);
@@ -79,6 +58,7 @@ h1 {
 }
 
 .content h2 {
+  margin: 0;
   color: #6c4bcf;
 }
 

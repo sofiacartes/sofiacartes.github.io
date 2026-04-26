@@ -1,8 +1,8 @@
 :root {
   --primary: #6c4bcf;
-  --primary-dark: #5639a8;
   --primary-light: #8a6df0;
-  --bg: #0f0f1a;
+  --bg: #0b0b12;
+  --card: rgba(255, 255, 255, 0.05);
   --text: #ffffff;
 }
 
@@ -14,40 +14,56 @@
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top, #141427, #0b0b12);
   color: var(--text);
+  overflow-x: hidden;
 }
 
+/* HEADER estilo minimal grande */
 header {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(45deg, var(--primary), var(--primary-light));
+  padding: 140px 20px 100px;
 }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  background: linear-gradient(45deg, #fff, var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header p {
+  margin-top: 10px;
+  opacity: 0.6;
   font-weight: 300;
-  opacity: 0.9;
 }
 
+/* GRID más limpio */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 60px;
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 80px;
+  gap: 30px;
 }
 
+/* CARDS glassmorphism */
 .card {
-  background: #1a1a2e;
-  padding: 25px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
   border-radius: 20px;
-  transition: 0.4s;
-  border: 1px solid transparent;
+  padding: 30px;
+  transition: 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card h2 {
@@ -57,17 +73,20 @@ header p {
 
 .card p {
   font-weight: 300;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
+/* HOVER más elegante (no brusco) */
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-8px);
   border: 1px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(108, 75, 207, 0.2);
 }
 
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
-  opacity: 0.5;
+  padding: 40px;
+  opacity: 0.4;
   font-weight: 300;
 }

@@ -1,9 +1,7 @@
 :root {
   --primary: #6c4bcf;
-  --primary-light: #8a6df0;
-  --bg: #0b0b12;
-  --card: rgba(255, 255, 255, 0.05);
-  --text: #ffffff;
+  --text: #111;
+  --bg: #ffffff;
 }
 
 * {
@@ -14,79 +12,64 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #141427, #0b0b12);
+  background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
 }
 
-/* HEADER estilo minimal grande */
-header {
-  text-align: center;
-  padding: 140px 20px 100px;
+/* CONTENEDOR centrado (MUY IMPORTANTE) */
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 80px 20px;
 }
 
-header h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  background: linear-gradient(45deg, #fff, var(--primary-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* HERO */
+.hero {
+  margin-bottom: 80px;
 }
 
-header p {
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.hero p {
   margin-top: 10px;
   opacity: 0.6;
-  font-weight: 300;
+  font-size: 0.95rem;
 }
 
-/* GRID más limpio */
+/* PROYECTOS */
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  padding: 80px;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* CARDS glassmorphism */
-.card {
-  background: var(--card);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 30px;
-  transition: 0.4s ease;
-  border: 1px solid rgba(255,255,255,0.08);
-
-  opacity: 0;
-  transform: translateY(40px);
+/* ITEM estilo referente */
+.project {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card h2 {
+.project h2 {
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
-.card p {
-  font-weight: 300;
-  opacity: 0.7;
+.project p {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 
-/* HOVER más elegante (no brusco) */
-.card:hover {
-  transform: translateY(-8px);
-  border: 1px solid var(--primary);
-  box-shadow: 0 10px 30px rgba(108, 75, 207, 0.2);
+/* EFECTO HOVER tipo referente */
+.project:hover {
+  transform: translateX(10px);
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  opacity: 0.4;
-  font-weight: 300;
+.project:hover h2 {
+  color: var(--primary);
 }

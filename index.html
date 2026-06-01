@@ -1,69 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Portafolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <header class="nav">
-    <h1 class="logo">sofia</h1>
-    <nav>
-      <a href="#about">Sobre mí</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#contact">Contacto</a>
-    </nav>
-  </header>
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
-  <section class="hero">
-    <h2>Hola, soy <span>sofía</span></h2>
-    <p> Interesada en el diseño digital e industrial</p>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">Portfolio<span class="accent">.</span></div>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav__cta" id="navCta">Hire me</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-text">DESIGN</div>
+    <div class="hero__content">
+      <div class="hero__tag reveal">Available for work — 2025</div>
+      <h1 class="hero__title">
+        <span class="reveal delay-1">Creative</span>
+        <span class="reveal delay-2 italic">Designer</span>
+        <span class="reveal delay-3">&amp; Developer</span>
+      </h1>
+      <p class="hero__sub reveal delay-4">
+        Construyo experiencias digitales que combinan<br/>
+        diseño editorial con código limpio.
+      </p>
+      <div class="hero__actions reveal delay-5">
+        <a href="#work" class="btn btn--primary">Ver proyectos</a>
+        <a href="#contact" class="btn btn--ghost">Hablemos</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
   </section>
 
-  <section id="about" class="section">
-    <h3>Sobre mí</h3>
-    <p>
-      Mi nombre es Sofía Cartes Aravena, tengo 21 años. Actualmente curso el cuarto año de diseño, con mención industrial, en la Universidad Diego Portales.
-      
-      La creatividad ha sido fundamental en mi vida. Por esa razón, permití dearrollar una mirada estratégica de los procesos. 
-      
-      Últimamente mi mayor interés es el diseño de interacción digital.
-    </p>
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>UI/UX Design</span><span class="dot">•</span>
+      <span>Web Development</span><span class="dot">•</span>
+      <span>Branding</span><span class="dot">•</span>
+      <span>Motion</span><span class="dot">•</span>
+      <span>Editorial</span><span class="dot">•</span>
+      <span>UI/UX Design</span><span class="dot">•</span>
+      <span>Web Development</span><span class="dot">•</span>
+      <span>Branding</span><span class="dot">•</span>
+      <span>Motion</span><span class="dot">•</span>
+      <span>Editorial</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="about__left">
+      <div class="about__label reveal">01 — About</div>
+      <h2 class="about__title reveal delay-1">
+        Diseño que<br/><em>habla</em> por sí solo
+      </h2>
+      <div class="about__img reveal delay-2">
+        <div class="about__img-inner">
+          <div class="about__placeholder">
+            <span>Tu foto aquí</span>
+          </div>
+        </div>
+        <div class="about__img-badge">Based in<br/>Chile 🇨🇱</div>
+      </div>
+    </div>
+    <div class="about__right">
+      <p class="about__bio reveal delay-2">
+        Soy un diseñador y desarrollador con pasión por crear interfaces
+        que no solo funcionan, sino que <strong>generan una emoción</strong>.
+        Mi enfoque combina tipografía editorial, motion consciente y código sólido.
+      </p>
+      <div class="about__stats reveal delay-3">
+        <div class="stat">
+          <span class="stat__num" data-target="3">0</span><span class="stat__plus">+</span>
+          <span class="stat__label">Años de experiencia</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-target="24">0</span><span class="stat__plus">+</span>
+          <span class="stat__label">Proyectos completados</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-target="12">0</span><span class="stat__plus">+</span>
+          <span class="stat__label">Clientes satisfechos</span>
+        </div>
+      </div>
+      <div class="about__skills reveal delay-4">
+        <span>Figma</span><span>React</span><span>CSS</span>
+        <span>After Effects</span><span>Framer</span><span>GSAP</span>
+      </div>
+    </div>
   </section>
 
-  <section id="projects" class="section">
-    <h3>Proyectos</h3>
+  <!-- WORK -->
+  <section class="work section" id="work">
+    <div class="work__header reveal">
+      <div class="work__label">02 — Work</div>
+      <h2 class="work__title">Proyectos<br/><em>Seleccionados</em></h2>
+    </div>
+    <div class="work__grid">
 
-    <div class="projects">
+      <article class="project reveal delay-1" data-index="01">
+        <div class="project__img">
+          <div class="project__img-fill" style="background: var(--magenta);">
+            <span class="project__num">01</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <h3 class="project__title">Brand Identity</h3>
+          <p class="project__desc">Identidad visual para startup tech. Sistema de diseño completo con motion guidelines.</p>
+          <div class="project__tags"><span>Branding</span><span>Motion</span></div>
+        </div>
+        <a href="#" class="project__link" aria-label="Ver proyecto">→</a>
+      </article>
 
-      <div class="card">
-        <h4>Proyecto 1</h4>
-        <p>Descripción breve del proyecto.</p>
-      </div>
+      <article class="project reveal delay-2" data-index="02">
+        <div class="project__img">
+          <div class="project__img-fill" style="background: var(--cool-gray);">
+            <span class="project__num">02</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <h3 class="project__title">E-commerce UX</h3>
+          <p class="project__desc">Rediseño completo de plataforma de comercio electrónico. +40% conversión.</p>
+          <div class="project__tags"><span>UI/UX</span><span>Research</span></div>
+        </div>
+        <a href="#" class="project__link" aria-label="Ver proyecto">→</a>
+      </article>
 
-      <div class="card">
-        <h4>Proyecto 2</h4>
-        <p>Descripción breve del proyecto.</p>
-      </div>
+      <article class="project reveal delay-3" data-index="03">
+        <div class="project__img">
+          <div class="project__img-fill" style="background: var(--black);">
+            <span class="project__num" style="color:var(--magenta)">03</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <h3 class="project__title">Web App</h3>
+          <p class="project__desc">Dashboard interactivo con visualización de datos en tiempo real. React + D3.</p>
+          <div class="project__tags"><span>Dev</span><span>Data Viz</span></div>
+        </div>
+        <a href="#" class="project__link" aria-label="Ver proyecto">→</a>
+      </article>
 
-      <div class="card">
-        <h4>Proyecto 3</h4>
-        <p>Descripción breve del proyecto.</p>
-      </div>
+      <article class="project reveal delay-4" data-index="04">
+        <div class="project__img">
+          <div class="project__img-fill" style="background: linear-gradient(135deg, var(--magenta), #b060b0);">
+            <span class="project__num">04</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <h3 class="project__title">Editorial Design</h3>
+          <p class="project__desc">Revista digital con tipografía expresiva y layouts experimentales para la web.</p>
+          <div class="project__tags"><span>Editorial</span><span>CSS</span></div>
+        </div>
+        <a href="#" class="project__link" aria-label="Ver proyecto">→</a>
+      </article>
 
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h3>Contacto</h3>
-    <p>sofia.cartes1@mail.udp.cl</p>
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="contact__inner reveal">
+      <div class="contact__label">03 — Contact</div>
+      <h2 class="contact__title">
+        ¿Tienes un proyecto<br/>en mente<span class="accent">?</span>
+      </h2>
+      <p class="contact__sub">Estoy disponible para proyectos freelance y posiciones full-time.</p>
+      <a href="mailto:tuemail@email.com" class="btn btn--primary btn--large contact__btn">
+        Escribeme
+        <span class="btn__arrow">↗</span>
+      </a>
+      <div class="contact__links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Behance</a>
+        <a href="#">GitHub</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="contact__big-text" aria-hidden="true">HELLO</div>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2025 — Portafolio</span>
+    <span>Diseñado &amp; desarrollado con ♥</span>
+  </footer>
 
   <script src="script.js"></script>
 </body>
